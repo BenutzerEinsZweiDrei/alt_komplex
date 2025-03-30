@@ -1,0 +1,198 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative Komplexversorgung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            display: block;
+            margin: 5px 0;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        select, input {
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alternative Komplexversorgung</h1>
+        
+        <h2>Psychiater</h2>
+        <p>Falls du in deiner Region keinen finden konntest, suche auf Doctolib nach einem Videogespräch.</p>
+        <a href="https://www.doctolib.de" target="_blank">Link zur Doctolib App</a>
+        <label>Turnus der Gespräche:</label>
+        <select id="psych">
+            <option>wöchentlich</option>
+            <option>monatlich</option>
+            <option>alle 3 Monate</option>
+        </select>
+        
+        <h2>Therapeut</h2>
+        <p>Falls du in deiner Region keinen finden konntest [...]</p>
+        <a href="https://www.116117.de" target="_blank">Link zu Arztsuche 116117</a>
+        <label>Turnus:</label>
+        <select id="thera">
+            <option>wöchentlich</option>
+        </select>
+        
+        <h2>DiGA und Psychoedukation</h2>
+        <p>Als Ergänzung zur Therapie empfiehlt sich eine DiGA.</p>
+        <a href="https://www.digadocs.de" target="_blank">Link zu digadocs</a>
+        <a href="https://www.teleclinic.com" target="_blank">Link zu teleclinic</a>
+        <a href="https://www.moodgym.com.au" target="_blank">Alternative moodgym</a>
+        <label>Tag für 2 Stunden DiGA:</label>
+        <label>Wochentag:</label>
+        <select class="wochentag">
+            <option>Montag</option>
+            <option>Dienstag</option>
+            <option>Mittwoch</option>
+            <option>Donnerstag</option>
+            <option>Freitag</option>
+        </select>
+        
+        <h2>Weitere Behandlungen</h2>
+        <a href="https://www.google.com/search?q=Ern%C3%A4hrungsberatung+in+meiner+N%C3%A4he" target="_blank">Ernährungsberatung</a>
+        <a href="https://www.google.com/search?q=Ergotherapie+in+meiner+N%C3%A4he" target="_blank">Ergotherapie</a>
+        <a href="https://www.google.com/search?q=Soziotherapie+in+meiner+N%C3%A4he" target="_blank">Soziotherapie</a>
+        <label>Wochentag:</label>
+        <select class="wochentag">
+            <option>Montag</option>
+            <option>Dienstag</option>
+            <option>Mittwoch</option>
+            <option>Donnerstag</option>
+            <option>Freitag</option>
+        </select>
+        
+        <h2>Emotionale Entlastung und Case Management</h2>
+        <p>Suche dir auf VSP einen Berater für emotionale Entlastung.</p>
+        <a href="https://www.virtualsupporttalks.de" target="_blank">Link Virtual Support Talks</a>
+        <label>Wochentag:</label>
+        <select class="wochentag">
+            <option>Montag</option>
+            <option>Dienstag</option>
+            <option>Mittwoch</option>
+            <option>Donnerstag</option>
+            <option>Freitag</option>
+        </select>
+        
+        <h2>Selbsthilfegruppe</h2>
+        <a href="https://www.google.com/search?q=Selbsthilfegruppe+in+meiner+N%C3%A4he" target="_blank">Selbsthilfegruppen in meiner Nähe</a>
+        <a href="https://www.hellopeers.com" target="_blank">Alternative hellopeers</a>
+        <label>Wochentag:</label>
+        <select class="wochentag">
+            <option>Montag</option>
+            <option>Dienstag</option>
+            <option>Mittwoch</option>
+            <option>Donnerstag</option>
+            <option>Freitag</option>
+        </select>
+        
+        <h2>Offener Treff gegen Einsamkeit</h2>
+        <a href="https://www.google.com/search?q=offener+Treff+in+meiner+N%C3%A4he" target="_blank">Treffpunkte gegen Einsamkeit</a>
+        <label>Wochentag:</label>
+        <select class="wochentag">
+            <option>Montag</option>
+            <option>Dienstag</option>
+            <option>Mittwoch</option>
+            <option>Donnerstag</option>
+            <option>Freitag</option>
+        </select>
+        
+        <h2>Tägliche Bewegung und Entspannung</h2>
+        <p>Jeden Tag findet ein Spaziergang und Entspannung statt.</p>
+        
+        <h2>PDF Generierung</h2>
+        <button onclick="generatePDF()">PDF erstellen</button>
+        
+        <h2>Austausch zur alternativen Komplexversorgung</h2>
+        <p>Für Austausch zu eurer alternativen Komplexversorgung wendet euch an den <a href="https://www.reddit.com/r/depression_de/" target="_blank">Subreddit depression_de</a>.</p>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.text("Alternative Komplexversorgung", 10, 10);
+        doc.text("Wöchentliche Planung:", 10, 20);
+
+        const wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
+        let wochenplan = { Montag: [], Dienstag: [], Mittwoch: [], Donnerstag: [], Freitag: [] };
+
+        // Alle Aktivitäten mit zugeordnetem Wochentag erfassen
+        document.querySelectorAll(".wochentag").forEach(select => {
+            const tag = select.value; // Gewählter Wochentag
+            const activity = select.previousElementSibling.previousElementSibling.textContent; // H2 auslesen
+            if (wochenplan[tag]) {
+                wochenplan[tag].push(activity);
+            }
+        });
+
+        let yPos = 30; // Startposition für den PDF-Text
+
+        // Wochentage durchgehen und Aktivitäten ausgeben
+        wochentage.forEach(tag => {
+            doc.text(`${tag}:`, 10, yPos);
+            yPos += 5;
+
+            // Aktivitäten einfügen oder "Kein Termin"
+            if (wochenplan[tag].length > 0) {
+                wochenplan[tag].forEach(activity => {
+                    doc.text(`  - ${activity}`, 15, yPos);
+                    yPos += 5;
+                });
+            } else {
+                doc.text("  - Kein Termin", 15, yPos);
+                yPos += 5;
+            }
+
+            // Tägliche Aktivitäten
+            doc.text("  - Spaziergang", 15, yPos);
+            doc.text("  - Entspannung", 15, yPos + 5);
+            yPos += 15; // Platz für nächsten Tag
+        });
+
+        // PDF speichern
+        doc.save("Alternative_Komplexversorgung.pdf");
+    }
+</script>
+
+
+</body>
+</html>
