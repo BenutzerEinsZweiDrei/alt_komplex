@@ -142,8 +142,8 @@
         <h2>Austausch zur alternativen Komplexversorgung</h2>
         <p>Für Austausch zu eurer alternativen Komplexversorgung wendet euch an den <a href="https://www.reddit.com/r/depression_de/" target="_blank">Subreddit depression_de</a>.</p>
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script>
     function generatePDF() {
         const { jsPDF } = window.jspdf;
@@ -163,6 +163,10 @@
                 wochenplan[tag].push(activity);
             }
         });
+
+        // Zusätzliche Felder erfassen
+        const psychSelect = document.getElementById("psych").value;
+        const theraSelect = document.getElementById("thera").value;
 
         let yPos = 30; // Startposition für den PDF-Text
 
@@ -188,10 +192,24 @@
             yPos += 15; // Platz für nächsten Tag
         });
 
+        // Wöchentliche Aktivitäten
+        doc.text("Wöchentlich:", 10, yPos);
+        yPos += 5;
+        doc.text(`  - ${psychSelect}`, 15, yPos);
+        doc.text(`  - ${theraSelect}`, 15, yPos + 5);
+        yPos += 15;
+
+        // Monatliche Aktivitäten (falls relevant)
+        doc.text("Monatlich:", 10, yPos);
+        yPos += 5;
+        doc.text("  - Beispielhafte monatliche Aktivität", 15, yPos);
+        yPos += 10;
+
         // PDF speichern
         doc.save("Alternative_Komplexversorgung.pdf");
     }
 </script>
+
 
 
 </body>
